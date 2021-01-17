@@ -14,15 +14,16 @@ export class GamescreenComponent implements OnInit {
   constructor(private router: Router, private common: CommonService) { }
 
   ngOnInit(): void {
-    this.random = Math.floor(Math.random() * 10);
+    this.random = Math.floor(Math.random() * 10) + 1;
+    this.list = [];
     this.list = this.common.getUserList().length > 0 ? this.common.getUserList() : [];
-    console.log(this.list);
     this.list.forEach(element => {
       element.fate = this.random == element.Bet ? true : false;
       if (element.fate) {
         element.Price = 2 * element.Price;
       }
     });
+    console.log(this.list);
   }
   backToDashboard() {
     this.router.navigate(['/dashboard']);

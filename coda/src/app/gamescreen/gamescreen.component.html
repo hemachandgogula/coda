@@ -1,2 +1,62 @@
-
-<input type="button" value="Back" (click)= "backToDashboard()">
+<div class="container-fluid">
+  <div class="row uppercards">
+    <div *ngFor="let i of list.slice(0,5)" [ngClass]="{'green': i.fate == true,'red':i.fate == false}"
+      class="card mr-3">
+      <div class="inline">
+        <img height="45px" width="45px" [src]="i['Profile Image']" alt="image">
+        <span>
+          {{i.Name}}
+        </span>
+      </div>
+      <div class="card-body">
+        <div class="inline">
+          <span class="mr-2">
+            ${{i.Price}}
+          </span>
+          <span>
+            {{i.Bet}}
+          </span>
+        </div>
+      </div>
+      <div class="card-footer text-muted w-80" *ngIf="i.fate == true" class="greenbg">
+        winner
+      </div>
+      <div class="card-footer text-muted w-80" *ngIf="i.fate == false" class="redbg">
+        Lose
+      </div>
+    </div>
+  </div>
+  <div class="row m-4">
+    <h1 class="m-auto">{{random}}</h1>
+  </div>
+  <div class="row lowercards">
+    <div *ngFor="let i of list.slice(5,9)" [ngClass]="{'green': i.fate == true,'red':i.fate == false}"
+      class="card mr-4">
+      <div class="inline">
+        <img height="45px" width="45px" [src]="i['Profile Image']" alt="image">
+        <span>
+          {{i.Name}}
+        </span>
+      </div>
+      <div class="card-body">
+        <div>
+          <span class="mr-2">
+            ${{i.Price}}
+          </span>
+          <span>
+            {{i.Bet}}
+          </span>
+        </div>
+      </div>
+      <div class="card-footer text-muted w-80" *ngIf="i.fate == true" class="greenbg">
+        winner
+      </div>
+      <div class="card-footer text-muted w-80" *ngIf="i.fate == false" class="redbg">
+        Lose
+      </div>
+    </div>
+  </div>
+  <div class="row m-2">
+    <button type="button" (click)="backToDashboard()" class="btn btn-dark setColor">Back</button>
+  </div>
+</div>

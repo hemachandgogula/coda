@@ -10,10 +10,9 @@ import { CommonService } from '../common.service';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent implements OnInit, AfterViewInit {
+export class DashboardComponent implements OnInit {
   displayedColumns: string[] = ['Select', 'Name', 'Avatar', 'Bet', 'Price'];
   userList: any;
-  dataSource: any;
   @ViewChild(MatPaginator) paginator: MatPaginator;
   dummylist: any;
   sidebarlist: any;
@@ -33,12 +32,10 @@ export class DashboardComponent implements OnInit, AfterViewInit {
       });
       this.dummylist = resp;
       this.userList = new MatTableDataSource<any>(resp);
+      this.userList.paginator = this.paginator;
     });
   }
 
-  ngAfterViewInit() {
-    // this.dataSource.paginator = this.paginator;
-  }
   selectChanged(event, e) {
     console.log(e);
     console.log(event.target.checked);

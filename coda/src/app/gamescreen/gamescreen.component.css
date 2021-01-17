@@ -1,0 +1,58 @@
+.green {
+    border: 3px solid greenyellow;
+    border-radius: 5px;
+    box-shadow: 5px 10px 5px 5px #88888838;
+}
+
+.red {
+    border: 3px solid rgb(150 15 15 / 95%);
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px 5px #88888838
+}
+
+.greenbg {
+    color: white;
+    border: 3px solid greenyellow;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    background-color: greenyellow;
+    width: 80%;
+    margin: auto;
+}
+
+.redbg {
+    width: 80%;
+    margin: auto;
+    color: white;
+    border: 2px solid rgb(150 15 15 / 95%);
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    background-color: rgb(150 15 15 / 95%);
+}
+
+.setColor {
+    color: #e0e05dd1;
+    border: 2px solid #ffff0080;
+}
+
+h1 {
+    border: 2px solid yellow;
+    text-shadow: 2px 4px 8px black;
+    color: yellow;
+    background-color: black;
+    border-radius: 100px;
+    padding: 30px;
+    font-size: xx-large;
+}
+
+.card {
+    width: 10rem;
+    height: 10rem;
+}
+
+.uppercards {
+    padding: 10% 10% 0 18%;
+}
+.lowercards {
+    padding: 0% 10% 0 22%;
+}
