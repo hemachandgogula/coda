@@ -37,8 +37,6 @@ export class DashboardComponent implements OnInit {
   }
 
   selectChanged(event, e) {
-    console.log(e);
-    console.log(event.target.checked);
     e.select = event.target.checked;
     if (event.target.checked) {
       this.sidebarlist.push(e);
@@ -52,7 +50,6 @@ export class DashboardComponent implements OnInit {
       });
       this.sidebarlist.splice(i, 1);
     }
-    console.log(this.sidebarlist);
   }
   startGame() {
     this.router.navigate(['/gamescreen']);
